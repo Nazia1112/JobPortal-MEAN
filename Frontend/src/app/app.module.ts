@@ -40,7 +40,7 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     ToastrModule.forRoot(),
     Ng4LoadingSpinnerModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'KEY_HERE'
+      apiKey: 'AIzaSyBIrGLvSyNXgq8XYmbMYke24oVRcLz_UX8'
     })
     
   ],

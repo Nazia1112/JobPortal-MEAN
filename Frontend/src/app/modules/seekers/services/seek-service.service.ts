@@ -20,6 +20,10 @@ export class SeekServiceService {
 
     return this.http.post('http://localhost:3000/seekers/addfile', data);
   }
+  savePhoto(data: any): Observable<any> {
+
+    return this.http.post('http://localhost:3000/seekers/addphoto', data);
+  }
   loginUser(data: any): Observable<any> {
 
     return this.http.post('http://localhost:3000/seekers/login', data, this.httpOptions);

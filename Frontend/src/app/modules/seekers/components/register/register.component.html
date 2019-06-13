@@ -45,6 +45,11 @@
       <input type="file" id="customFile" (change)="onchangefile($event)"><br>
       <button class="btn" type="button" (click)="uploadFile()">Upload CV</button>
     </div>
+
+    <div class="fileupload">
+      <input type="file" id="customFile1" (change)="onchangephoto($event)"><br>
+      <button class="btn" type="button" (click)="uploadPhoto()">Upload Photo</button>
+    </div>
     <input class="btn btn-lg" type="submit" value="Register" [disabled]="!this.Registerdata.valid">
     <br><br>
     <a routerLink="/users/login">Already Registered?</a>

@@ -12,12 +12,13 @@ import { ShowResumeComponent } from '../show-resume/show-resume.component';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  res: any
+  res: any;
+  backendUrl: any;
   constructor(private srv: SeekServiceService, 
     private toast : ToastrService,
     public dialog: MatDialog) { }
   ngOnInit() {
-
+    this.backendUrl = "http://localhost:3000";
     this.userinfo();
    
   }

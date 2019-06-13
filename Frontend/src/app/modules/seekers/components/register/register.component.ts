@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { SeekServiceService } from "../../services/seek-service.service";
 import { Router } from '@angular/router';
 import { ToasterService } from '../../../../toaster.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +12,9 @@ import { ToasterService } from '../../../../toaster.service';
 export class RegisterComponent implements OnInit {
 
   selectedFile:File=null;
+  selectedPhoto:File =null;
   fd=new FormData();
+  fd1 = new FormData();
 
   Registerdata=this.fb.group({
     "FirstName":['',[Validators.required]],
@@ -23,7 +26,8 @@ export class RegisterComponent implements OnInit {
     "Password" : ['',[Validators.required]],
     "Skills": ['',[Validators.required]],
     "Resume" : ['',[Validators.required]],
-    "Experience" : ['',[Validators.required]]
+    "Experience" : ['',[Validators.required]],
+    "Photo":['', Validators.required]
 
   });
 
@@ -38,10 +42,18 @@ export class RegisterComponent implements OnInit {
   onchangefile(event)
   {
     console.log(event);
-    this.selectedFile=<File>event.target.files[0];
-    
+    this.selectedFile=<File>event.target.files[0];    
     
   }
+
+  onchangephoto(event)
+  {
+    console.log(event);
+    this.selectedPhoto=<File>event.target.files[0];    
+    
+  }
+
+
 
 
   uploadFile()
@@ -59,6 +71,23 @@ export class RegisterComponent implements OnInit {
     });
     
   }
+
+  uploadPhoto()
+  {
+    console.log('Registerdata', this.Registerdata);
+    this.fd1.append('Photo',this.selectedPhoto,this.selectedPhoto.name);
+    this.srv.savePhoto(this.fd1).subscribe((data)=>{
+      if(data.status == 200)
+      {
+        this.toast.successToaster(data.msg.str1,data.msg.str2);
+        this.Registerdata.patchValue({
+          Photo:data.filename
+        })
+      }
+    });
+    
+  }
+
 
 
 

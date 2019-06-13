@@ -23,7 +23,7 @@
     <div class="card">
       <br>
       <i class="fas fa-edit" (click)="editProduct(res.UserName)" style="text-align: right">Edit</i>
-      <img class="center" src="https://cdn3.iconfinder.com/data/icons/users-6/100/4-512.png" alt="Avatar" style="width:30%; height:30% ;">
+      <img class="center" src="{{backendUrl}}/images/{{res.Photo}}" alt="Avatar" style="width:30%; height:30% ;">
       <div class="container">
         <h4>
           <b>{{res.UserName | uppercase}}</b>

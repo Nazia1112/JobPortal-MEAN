@@ -19,7 +19,11 @@ import { ProfileComponent } from '../profile/profile.component';
 export class EditProfileComponent implements OnInit {
 
   selectedFile:File=null;
+  selectedPhoto:File=null;
+
   fd=new FormData();
+  fd1 = new FormData();
+
   editForm=this.fb.group({
     "FirstName":['',[Validators.required]],
     "LastName":['',[Validators.required]],
@@ -29,7 +33,8 @@ export class EditProfileComponent implements OnInit {
     "UserName" : ['',[Validators.required]],
     "Skills": ['',[Validators.required]],
     "Resume" : ['',[Validators.required]],
-    "Experience" : ['',[Validators.required]]
+    "Experience" : ['',[Validators.required]],
+    "Photo":['',Validators.required]
 
   });
 
@@ -53,7 +58,8 @@ export class EditProfileComponent implements OnInit {
         UserName: res.UserName,
         Skills: res.Skills,
         Experience: res.Experience,
-        Resume: res.Resume
+        Resume: res.Resume,
+        Photo: res.Photo
       });
 
 
@@ -63,6 +69,14 @@ export class EditProfileComponent implements OnInit {
   {
     console.log(event);
     this.selectedFile=<File>event.target.files[0];
+    
+    
+  }
+
+  onchangephoto(event)
+  {
+    console.log(event);
+    this.selectedPhoto=<File>event.target.files[0];
     
     
   }
@@ -87,6 +101,25 @@ export class EditProfileComponent implements OnInit {
     
   }
 
+  uploadPhoto()
+  {
+    console.log('editForm', this.editForm);
+    this.fd.append('Photo',this.selectedPhoto,this.selectedPhoto.name);
+    this.srv.savePhoto(this.fd).subscribe((data)=>{
+      if(data.status == 200)
+      {
+        // this.toast.successToaster(data.msg.str1,data.msg.str2);
+        this.toastr.success('Profile Pic Updated')
+        this.editForm.patchValue({
+          Photo:data.filename
+        })
+      }
+      else{
+        this.toastr.error('Problem Update Profile Pic');
+      }
+    });
+    
+  }
   cancel()
   {
     this.dialogRef.close();
