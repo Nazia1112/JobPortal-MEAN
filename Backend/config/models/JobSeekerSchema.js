@@ -53,6 +53,10 @@ const seekerSchema=new schema({
     Experience:{
         type:Number,
         require:true
+    },
+    Photo:{
+        type:String,
+        require: true
     }
 },
     {
