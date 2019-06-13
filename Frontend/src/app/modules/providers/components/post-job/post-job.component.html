@@ -1,0 +1,84 @@
+
+    <form [formGroup]="Postdata" (ngSubmit)="postData()">
+      <table>
+        <tr>
+          <td class="left">
+            <label>Job Title:</label>
+          </td>
+          <td>
+            <input class="field" type="text" placeholder="Job Title" formControlName="JobTitle"><br>
+            <small class="small" *ngIf="formErrors.JobTitle" >{{formErrors.JobTitle}}</small>
+          </td>
+        </tr>
+        <tr>
+            <td class="left">
+              <label>Skills Require:</label>
+            </td>
+            <td>
+              <input class="field" type="text" placeholder="Skills Require" formControlName="SkillsRequire"><br>
+              <small class="small" *ngIf="formErrors.SkillsRequire" >{{formErrors.SkillsRequire}}</small>
+            </td>
+          </tr>
+        <tr>
+            <td class="left">
+              <label>Description:</label>
+            </td>
+            <td>
+              <textarea class="field" placeholder="Description" rows="4" formControlName="Description"></textarea><br>
+              <small class="small" *ngIf="formErrors.Description" >{{formErrors.Description}}</small>            
+            </td>
+          </tr>
+        <tr>
+          <td class="left">
+            <label>Experience Require:</label>
+          </td>
+          <td>
+            <input class="field" type="number" max = "2" placeholder="Experience Require" formControlName="ExperienceRequire"><br>
+            <small class="small" *ngIf="formErrors.ExperienceRequire" >{{formErrors.ExperienceRequire}}</small>            
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <label>Locations:</label>
+          </td>
+          <td>
+            <input class="field" type="text" placeholder="Location" formControlName="Location"><br>
+            <small class="small" *ngIf="formErrors.Location" >{{formErrors.Location}}</small>            
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <label>Vacancies :</label>
+          </td>
+          <td>
+            <input class="field" type="number" placeholder="Vacancies" formControlName="Vacancies"><br>
+            <small class="small" *ngIf="formErrors.Vacancies" >{{formErrors.Vacancies}}</small>            
+            
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <label>Salary Monthly :</label>
+          </td>
+          <td>
+            <input class="field" type="number" placeholder="Package" formControlName="Package"><br>
+            <small class="small" *ngIf="formErrors.Package" >{{formErrors.Package}}</small>            
+         
+          </td>
+        </tr>
+        <tr>
+            <td class="left">
+              <label>Last Date :</label>
+            </td>
+            <td>
+              <input class="field" type="date" placeholder="" formControlName="LastDate"><br>
+            </td>
+          </tr>
+      </table>
+  
+      <input class="btn" type="submit" value="Add Post" [disabled]="!this.Postdata.valid">
+      <input class="btn margin" type="button" (click)='close()' value="Close">
+    </form>
+ 

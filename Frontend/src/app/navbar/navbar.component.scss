@@ -1,0 +1,24 @@
+.navbar
+{
+    background-color: white!important;
+    a{
+        color: black;
+    }
+    a:hover{
+        color: grey;
+    }
+    .btn{
+        background-color:transparent; 
+        border: 1px black solid;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: black;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .btn:hover{
+        background-color: black;
+        color: white;
+    }
+
+}

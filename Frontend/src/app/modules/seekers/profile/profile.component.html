@@ -1,0 +1,17 @@
+<div class="container" *ngIf="res">
+  <br>
+  <div class="card">
+    <div class="container">
+      <h1>Welcome! {{res.UserName | uppercase}}</h1>
+      <h2>Full Name - {{res.FirstName}}&nbsp;{{res.LastName}}</h2>
+      <h4>Email -{{res.Email}}</h4>
+      <h4>Phone -{{res.Phone}}</h4>
+      <h4>Resume -{{res.Resume}}</h4>
+      <h4>Skills- {{res.Skills}}</h4>
+      <h4>Address- {{res.Address}}</h4>
+
+
+    </div>
+  </div>
+
+</div>

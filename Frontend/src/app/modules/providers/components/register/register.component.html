@@ -1,0 +1,80 @@
+<br>
+<br>
+<div class="register ">
+  <h3>Register Company</h3>
+  <form validate [formGroup]="Registerdata" (ngSubmit)="Register()">
+    <table>
+      <tr>
+        <td class="left">
+          <label>Company Name:</label>
+        </td>
+        <td>
+          <input class="field" type="text" placeholder="Company Name" formControlName="CompanyName">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <label>Password:</label>
+        </td>
+        <td>
+          <input class="field" type="password" placeholder="Password" formControlName="Password">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <label>CompanyDomain:</label>
+        </td>
+        <td>
+          <input class="field" type="text" placeholder="CompanyDomain" formControlName="CompanyDomain">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <label>Established Year:</label>
+        </td>
+        <td>
+          <input class="field" type="number" maxlength="4" placeholder="In Years" formControlName="Established">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <label>Address:</label>
+        </td>
+        <td>
+          <input class="field" type="text" placeholder="Address" formControlName="Address">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <label>Employee Count :</label>
+        </td>
+        <td>
+          <input class="field" type="text" placeholder="Employee Count " formControlName="EmployeeCount">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <label>Email :</label>
+        </td>
+        <td>
+          <input class="field" type="email" placeholder="Email" formControlName="Email">
+          <br>
+        </td>
+      </tr>
+    </table>
+
+    <input class="btn" type="submit" value="Register" [disabled]="!this.Registerdata.valid">
+    <br>
+    <br>
+    <a routerLink="/providers/login"> Already Registered your company?</a>
+  </form>
+
+</div>
+<br>
+<br>

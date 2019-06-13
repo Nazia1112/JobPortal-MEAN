@@ -1,0 +1,17 @@
+<div class="container">
+  <button class="btn" (click)="addJob()"> Add New Post+</button>
+</div>
+
+<div class="post-container">
+  <div *ngIf="postdetails.length">
+    <div class="post" *ngFor="let posts of postdetails">
+      <h5>Job Title:<small>{{ posts.JobTitle}}</small></h5>
+      <h5>ExperienceRequire:<small>{{ posts.ExperienceRequire}}</small></h5>
+      <h5>Location:<small>{{ posts.Location}}</small></h5>
+      <h5>SkillsRequire:<small>{{ posts.SkillsRequire}}</small></h5>
+      <h5>Vacancies:<small>{{ posts.Vacancies}}</small></h5>
+      <h5>Description:<small>{{ posts.Description}}</small></h5>
+      <a class="delete" (click)="deletePost(posts._id)"><img title="Remove Post" src="../../../../../assets/Images/remove-icon-png-24.png" height="20px" width="20px"></a>
+    </div>
+  </div>
+</div>

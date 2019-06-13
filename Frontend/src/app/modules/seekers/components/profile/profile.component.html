@@ -1,0 +1,45 @@
+<!-- <div class="container" *ngIf="res">
+  <br>
+  <div class="card">
+    <div class="container">
+      <h1>Welcome! {{res.UserName | uppercase}}</h1>
+      <h2>Full Name - {{res.FirstName}}&nbsp;{{res.LastName}}</h2>
+      <h4>Email -{{res.Email}}</h4>
+      <h4>Phone -{{res.Phone}}</h4>
+      <h4>Resume -{{res.Resume}}</h4>
+      <h4>Skills- {{res.Skills}}</h4>
+      <h4>Address- {{res.Address}}</h4>
+
+
+    </div>
+  </div>
+
+</div> -->
+
+
+<div class="container" *ngIf="res">
+    <br>
+    <br>
+    <div class="card">
+      <br>
+      <i class="fas fa-edit" (click)="editProduct(res.UserName)" style="text-align: right">Edit</i>
+      <img class="center" src="https://cdn3.iconfinder.com/data/icons/users-6/100/4-512.png" alt="Avatar" style="width:30%; height:30% ;">
+      <div class="container">
+        <h4>
+          <b>{{res.UserName | uppercase}}</b>
+        </h4>
+        <p>Full Name - {{res.FirstName}}&nbsp;{{res.LastName}}</p>
+        <p>Email -{{res.Email}}</p>
+        <p>Phone -{{res.Phone}}</p>
+        <p>Skills- {{res.Skills}}</p>
+        <p>Address- {{res.Address}}</p>
+        <p>Resume -{{res.Resume}} &nbsp;<a (click)="showResume(res.Resume)"><i class="fas fa-eye" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='blue'"></i></a></p>
+        <p>Experience(in years) - {{res.Experience}}</p>
+      </div>
+  
+  
+    </div>
+    <br><br>
+  
+  </div>
+

@@ -1,0 +1,35 @@
+.btn{
+    background-color:#523F3F; 
+    color: white;
+    margin-top: 20px;
+    
+}
+.post-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+    .post{
+        background-color: white;
+        margin-right: 10%;
+        width:40%;
+        position: relative;
+        float: left;
+        margin-bottom: 40px;
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 0 15px 5px #ccc;
+        transition: .2s ease-in-out;
+        padding: 20px;
+        .delete
+        {
+            position: absolute;
+            left: 90%;
+            top: 5%;
+        }
+        &:hover {
+            box-shadow: 0 0 15px 5px #666;
+            cursor: pointer;   
+        }
+    }
+}

@@ -1,0 +1,83 @@
+<br>
+<div class="container">
+
+  <div class="details" *ngIf="postdetails">
+    <button class="btn" (click)="Back()" style="float: right;">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <h1 style="text-align: center">{{postdetails.Provider_id.CompanyName}}
+      <br>
+      <small style="text-align: center">
+        <i>Established In Year {{postdetails.Provider_id.Established}}</i>
+      </small>
+    </h1>
+    <br>
+    <div class="row">
+      <div class="col">
+        <h5>CompanyDomain:
+          <i> {{postdetails.Provider_id.CompanyDomain}}</i>
+        </h5>
+      </div>
+      <div class="col" style="text-align: right">
+        <h5>EmployeeCount:
+          <i> {{postdetails.Provider_id.EmployeeCount}}</i>
+        </h5>
+      </div>
+    </div>
+    <br>
+    <hr>
+
+
+    <h3 style="text-align: center">
+      <i class="fas fa-briefcase"></i> Job Description</h3>
+    <br>
+    <div class="row">
+      <div class="col" style="text-align: right;">
+        <h4>Job Title:</h4>
+        <h4>Job Location:</h4>
+        <h4> ExperienceRequire:</h4>
+        <h4> Salary offered:</h4>
+        <h4>Description:</h4>
+        <h4>Application till now:</h4>
+        <h4>Last Date to Apply:</h4>
+        <h4>SkillsRequire:</h4>
+
+      </div>
+      <div class="col">
+        <h4>
+          <i>{{postdetails.JobTitle}}</i>
+        </h4>
+        <h4>
+          <i>{{postdetails.Location}}</i>
+        </h4>
+
+        <h4>
+          <i>{{postdetails.ExperienceRequire}} years</i>
+        </h4>
+        <h4>
+          <i>{{postdetails.Package}} per Month</i>
+        </h4>
+        <h4>
+          <i>{{postdetails.Description}}</i>
+        </h4>
+        <h4>
+          <i>{{ postdetails.count}}</i>
+        </h4>
+
+        <h4>
+          <i>{{ postdetails.LastDate | date}}</i>
+        </h4>
+        <h4>
+          <i>{{ postdetails.SkillsRequire}}</i>
+        </h4>
+
+      </div>
+    </div>
+    <hr>
+    <button id="button" class="btn btn-lg" (click)="applyJob(postdetails._id)">Apply Now</button>
+
+  </div>
+</div>
+<br>
+<br>

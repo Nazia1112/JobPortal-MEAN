@@ -1,0 +1,15 @@
+<div class="loginProvider">
+  <form [formGroup]="logindata" (ngSubmit)="login()">
+    <h3> Company Login</h3>
+    <input class="field" type="text" placeholder="CompanyName" formControlName="CompanyName">
+    <br>
+    <input class="field" type="password" placeholder="Password" formControlName="Password">
+    <br>
+    <button class="btn" type="submit">Login
+      <i class="fas fa-sign-in-alt"></i>
+    </button>
+    <br>
+    <br>
+    <a routerLink="/providers/register">Want to register your company?</a>
+  </form>
+</div>

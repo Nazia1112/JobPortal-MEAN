@@ -1,0 +1,12 @@
+ <div class="login">
+  <form [formGroup]="logindata" (ngSubmit)="login()">
+
+    <h3>Login</h3>
+    <input class="field" type="text" placeholder="UserName" formControlName="UserName"><br>
+
+    <input class="field" type="password" placeholder="Password" formControlName="Password"><br>
+    <button class="btn" type="submit" >Login <i class="fas fa-sign-in-alt"></i></button> <br>
+    <br>
+    <a routerLink="/users/Register">Want to register?</a>
+  </form>
+</div>
