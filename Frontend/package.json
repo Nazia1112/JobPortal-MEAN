@@ -32,7 +32,7 @@
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "ng4-loading-spinner": "^1.2.3",
     "ngx-file-viewer": "0.0.6",
     "ngx-google-places-autocomplete": "^2.0.4",
